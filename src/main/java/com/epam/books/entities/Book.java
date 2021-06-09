@@ -3,6 +3,7 @@ package com.epam.books.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
@@ -15,12 +16,12 @@ import javax.validation.constraints.Size;
 public class Book {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="BOOK_ID")
 	private Long id;
 
 
-	@Column(name="BOOK_NAME", length=50, nullable=false, unique = true)
+	@Column(name="BOOK_NAME", length=100, nullable=false, unique = true)
 	@NotEmpty(message = "Book name is mandatory , please provide bookname")
 	private String bookname;
 
@@ -31,7 +32,7 @@ public class Book {
 	@Column(name="CATEGORY", length=50, nullable=false)
 	private String category;
 
-	@Column(name="DESCRIPTION", length=50, nullable=false)
+	@Column(name="DESCRIPTION", length=200, nullable=false)
 	private String description;
 
 
