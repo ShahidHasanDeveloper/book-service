@@ -7,3 +7,14 @@ spring:
   datasource:    url: jdbc:h2:mem:testdb
 
 server:  error:    include-message: ALWAYS  port: 8081
+  
+swagger:
+  ui:
+    title: EPAM Book Management Service
+    description: This page list all API's of Book Management
+    version: "1.0"
+    contactname: Shahid Hasan
+    contacturl: https://www.epam.com
+    contactemail: shahid_hasan@epam.com
+    licence: Licence 2.0
+    licenceurl: https://www.epam.com/licence.html
