@@ -1,3 +1,0 @@
-insert into book values(1, 'Robert Kiyosaki','Rich Dad Poor Dad','Finance','Rich Dad Poor Dad is a 1997 book written by Robert Kiyosaki and Sharon Lechter. It advocates the importance of financial literacy, financial independence etc','1997')
-insert into book values(2, 'Edward John Carnell','Spring Microservices in Action','Technology','This book teaches you how to build microservice-based applications using Java and the Spring platform.','2017')
-insert into book values(3, 'Ben Straub and Scott Chacon','Pro Git','Technology','Pro Git is your fully-updated guide to Git and its usage in the modern world','2009')

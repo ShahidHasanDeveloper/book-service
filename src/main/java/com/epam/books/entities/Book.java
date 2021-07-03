@@ -10,9 +10,10 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 import io.swagger.annotations.ApiModel;
+import lombok.Data;
 
 
-
+@Data
 @Entity
 @Table(name="book")
 @ApiModel(description="This model is to create a book")
@@ -22,7 +23,6 @@ public class Book {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="BOOK_ID")
 	private Long id;
-
 
 	@Column(name="BOOK_NAME", length=100, nullable=false, unique = true)
 	@NotEmpty(message = "Book name is mandatory , please provide bookname")
@@ -41,79 +41,6 @@ public class Book {
 
 	@Column(name="PUBLISH_YEAR", length=4, nullable=false)
 	private int publishYear;
-
-
-	public Book() {
-
-	}
-
-
-	public Long getId() {
-		return id;
-	}
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-	public String getBookname() {
-		return bookname;
-	}
-
-
-	public void setBookname(String bookname) {
-		this.bookname = bookname;
-	}
-
-
-
-
-	public String getAuthorname() {
-		return authorname;
-	}
-
-
-	public void setAuthorname(String authorname) {
-		this.authorname = authorname;
-	}
-
-
-	public String getCategory() {
-		return category;
-	}
-
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-
-	public String getDescription() {
-		return description;
-	}
-
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-
-	public int getPublishYear() {
-		return publishYear;
-	}
-
-
-	public void setPublishYear(int publishYear) {
-		this.publishYear = publishYear;
-	}
-
-
-
-
-
-
 
 
 }
