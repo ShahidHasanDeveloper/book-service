@@ -48,7 +48,7 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
 
 
 	@ExceptionHandler(value = BookExistsException.class)
-	public final ResponseEntity<Object>handleBookNotFoundException(
+	public final ResponseEntity<Object>handleBookExitsException(
 			BookExistsException ex, WebRequest request){
 		
 		CustomErrorDetails customErrors= new CustomErrorDetails(new Date(), "Book is already present ", ex.getMessage());
