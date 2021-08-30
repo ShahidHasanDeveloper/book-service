@@ -6,6 +6,8 @@ import java.util.Optional;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -35,6 +37,7 @@ import io.swagger.annotations.ApiOperation;
 @Validated
 public class BookController {
 
+	private final Logger logger = LoggerFactory.getLogger(BookController.class);
 	@Autowired
 	private BookService bookService;
 
@@ -61,6 +64,7 @@ public class BookController {
 			Optional<Book> optionalBook=bookService.getBookById(id);
 			return optionalBook.get();
 		} catch(BookNotFoundException e) {
+			logger.error("BookController | getBookById | BookNotFoundException exception {} "+ e.getCause());
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
 		}
 
@@ -72,6 +76,7 @@ public class BookController {
 		try {
 			return bookService.updateBookById(id, book);
 		} catch (BookNotFoundException e) {
+			logger.error("BookController | updateBookById | BookNotFoundException exception {} "+ e.getCause());
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
 		}
 	}
